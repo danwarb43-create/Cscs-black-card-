@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CITB HS&E – Managers & Professionals Study Hub</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f172a">
+  <style>
+    :root {
+      --bg:#0f172a;--card:#111827;--text:#e5e7eb;--muted:#9ca3af;--accent:#38bdf8
+    }
+    *{box-sizing:border-box}
+<button onclick="show('cheatsheet')">⚖️ Quick-Ref Cheat Sheet</button>
+
+    body{margin:0;font-family:system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text)}
+    header{padding:1.2rem;border-bottom:1px solid #1f2933}
+    header h1{margin:0;font-size:1.4rem}
+    header p{margin:.25rem 0 0;color:var(--muted)}
+    .container{display:grid;grid-template-columns:260px 1fr;min-height:calc(100vh - 80px)}
+    nav{border-right:1px solid #1f2933;padding:1rem}
+    nav button{display:block;width:100%;text-align:left;padding:.6rem .75rem;margin-bottom:.25rem;background:none;border:none;color:var(--text);border-radius:.5rem;cursor:pointer}
+    nav button:hover,nav button.active{background:#1f2933;color:var(--accent)}
+    main{padding:1.5rem}
+    section{display:none}
+    section.active{display:block}
+    .card{background:var(--card);border-radius:.75rem;padding:1rem;margin-bottom:1rem; border: 1px solid #1f2933;}
+    h2{margin-top:0;font-size:1.2rem;color:var(--accent)}
+    ul{padding-left:1.2rem}
+    li{margin-bottom:.4rem}
+    .qa{margin-bottom:1.5rem; padding:10px; border-radius:8px; transition: 0.3s;}
+    .qa p { margin-top: 0; font-weight: 600; }
+    .qa label { display: block; padding: 8px 0; cursor: pointer; color: var(--muted); }
+    .qa input { margin-right: 10px; }
+    .small{color:var(--muted);font-size:.85rem}
+    progress{width:100%; height: 12px; border-radius: 10px; accent-color: var(--accent);}
+    iframe{width:100%;height:600px;border:none;border-radius:.5rem}
+    @media(max-width:800px){
+      .container{grid-template-columns:1fr}
+      nav{display:flex;overflow-x:auto;border-right:none;border-bottom:1px solid #1f2933; white-space: nowrap;}
+      nav button{flex:0 0 auto;margin-right:.5rem}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>CITB HS&E Test – Managers & Professionals</h1>
+  <p>Offline-ready personal study hub</p>
+</header>
+
+<div class="container">
+<nav>
+  <button class="active" onclick="show('dashboard')">Dashboard</button>
+  <button onclick="show('legal')">Legal Duties</button>
+  <button onclick="show('risk')">Risk & RAMS</button>
+  <button onclick="show('height')">Work at Height</button>
+  <button onclick="show('fire')">Fire</button>
+  <button onclick="show('health')">Health & COSHH</button>
+  <button onclick="show('mock')">Mock Exam</button>
+  <button onclick="show('pdfs')">Study PDFs</button>
+</nav>
+
+<main>
+  <section id="dashboard" class="active">
+    <div class="card">
+      <h2>Countdown to Test</h2>
+      <p id="countdown" style="font-size: 1.5rem; font-weight: bold;"></p>
+    </div>
+    <div class="card">
+      <h2>Study Progress</h2>
+      <progress id="progress" value="0" max="100"></progress>
+      <p class="small" id="progressText">0% complete</p>
+      <p>Pass the Mock Exam (80%+) to boost your progress automatically!</p>
+    </div>
+  </section>
+
+  <section id="legal">
+    <div class="card">
+      <h2>Legal Duties</h2>
+      <ul>
+        <li><strong>Duty of Care:</strong> Managers retain responsibility even when delegating.</li>
+        <li><strong>HSWA 1974:</strong> Applies to employees, contractors, and the public.</li>
+        <li><strong>Enforcement:</strong> HSE can issue Improvement or Prohibition notices.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="risk">
+    <div class="card">
+      <h2>Risk & RAMS</h2>
+      <ul>
+        <li><strong>The 5 Steps:</strong> Identify, Decide who, Evaluate, Record, Review.</li>
+        <li><strong>Hierarchy of Control:</strong> 1. Elimination, 2. Substitution, 3. Engineering, 4. Admin, 5. PPE (Last).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="mock">
+    <div class="card">
+      <h2>Interactive Mock Exam (15 Questions)</h2>
+      <div id="quiz-container">
+        
+        <div class="qa" data-answer="A">
+          <p>Q1. If a manager delegates a safety task to a supervisor, who is ultimately responsible?</p>
+          <label><input type="radio" name="q1" value="A"> The Manager</label>
+          <label><input type="radio" name="q1" value="B"> The Supervisor</label>
+          <label><input type="radio" name="q1" value="C"> The HSE</label>
+        </div>
+
+        <div class="qa" data-answer="C">
+          <p>Q2. RIDDOR: When must an accident be reported for a worker being off work?</p>
+          <label><input type="radio" name="q2" value="A"> 24 hours</label>
+          <label><input type="radio" name="q2" value="B"> 3 consecutive days</label>
+          <label><input type="radio" name="q2" value="C"> 7 consecutive days</label>
+        </div>
+
+        <div class="qa" data-answer="B">
+          <p>Q3. What is the legal status of an Approved Code of Practice (ACoP)?</p>
+          <label><input type="radio" name="q3" value="A"> Just a recommendation</label>
+          <label><input type="radio" name="q3" value="B"> Used as evidence in court</label>
+          <label><input type="radio" name="q3" value="C"> Optional</label>
+        </div>
+
+        <div class="qa" data-answer="B">
+          <p>Q4. Most effective way to control a risk?</p>
+          <label><input type="radio" name="q4" value="A"> Better PPE</label>
+          <label><input type="radio" name="q4" value="B"> Elimination at design stage</label>
+          <label><input type="radio" name="q4" value="C"> Warning signs</label>
+        </div>
+
+        <div class="qa" data-answer="A">
+          <p>Q5. High oxygen levels in a confined space cause what?</p>
+          <label><input type="radio" name="q5" value="A"> Increased risk of fire/explosion</label>
+          <label><input type="radio" name="q5" value="B"> Energy boost for workers</label>
+          <label><input type="radio" name="q5" value="C"> Toxic gas neutralization</label>
+        </div>
+
+        <div class="qa" data-answer="C">
+          <p>Q6. Who prepares the Construction Phase Plan under CDM 2015?</p>
+          <label><input type="radio" name="q6" value="A"> The Client</label>
+          <label><input type="radio" name="q6" value="B"> The Principal Designer</label>
+          <label><input type="radio" name="q6" value="C"> The Principal Contractor</label>
+        </div>
+
+        <div class="qa" data-answer="B">
+          <p>Q7. Noise level where hearing protection MUST be provided?</p>
+          <label><input type="radio" name="q7" value="A"> 80 dB</label>
+          <label><input type="radio" name="q7" value="B"> 85 dB</label>
+          <label><input type="radio" name="q7" value="C"> 90 dB</label>
+        </div>
+
+        <div class="qa" data-answer="A">
+          <p>Q8. Where is the Safe Working Load (SWL) for a MEWP found?</p>
+          <label><input type="radio" name="q8" value="A"> Information plate on machine</label>
+          <label><input type="radio" name="q8" value="B"> Manufacturer website only</label>
+          <label><input type="radio" name="q8" value="C"> On the operator's license</label>
+        </div>
+
+        <div class="qa" data-answer="C">
+          <p>Q9. Best way to clean an oil spill on site?</p>
+          <label><input type="radio" name="q9" value="A"> Water hose</label>
+          <label><input type="radio" name="q9" value="B"> Sand</label>
+          <label><input type="radio" name="q9" value="C"> Absorbent spill kit</label>
+        </div>
+
+        <div class="qa" data-answer="B">
+          <p>Q10. Where is silica dust concentration highest when cutting concrete?</p>
+          <label><input type="radio" name="q10" value="A"> Open windy area</label>
+          <label><input type="radio" name="q10" value="B"> Unventilated room</label>
+          <label><input type="radio" name="q10" value="C"> Near water suppression</label>
+        </div>
+
+        <div class="qa" data-answer="B">
+          <p>Q11. Primary purpose of health surveillance?</p>
+          <label><input type="radio" name="q11" value="A"> Check for overtime fitness</label>
+          <label><input type="radio" name="q11" value="B"> Detect early work-related ill health</label>
+          <label><input type="radio" name="q11" value="C"> Drug testing</label>
+        </div>
+
+        <div class="qa" data-answer="A">
+          <p>Q12. Action if you suspect asbestos not on the survey?</p>
+          <label><input type="radio" name="q12" value="A"> Stop work immediately</label>
+          <label><input type="radio" name="q12" value="B"> Ask a peer to check</label>
+          <label><input type="radio" name="q12" value="C"> Wet it and continue</label>
+        </div>
+
+        <div class="qa" data-answer="C">
+          <p>Q13. When must a competent person inspect an excavation?</p>
+          <label><input type="radio" name="q13" value="A"> Weekly</label>
+          <label><input type="radio" name="q13" value="B"> Only if deeper than 2m</label>
+          <label><input type="radio" name="q13" value="C"> Start of every shift</label>
+        </div>
+
+        <div class="qa" data-answer="B">
+          <p>Q14. Best extinguisher for electrical fires?</p>
+          <label><input type="radio" name="q14" value="A"> Water</label>
+          <label><input type="radio" name="q14" value="B"> CO2</label>
+          <label><input type="radio" name="q14" value="C"> Foam</label>
+        </div>
+
+        <div class="qa" data-answer="A">
+          <p>Q15. Welfare: No running water for hand washing?</p>
+          <label><input type="radio" name="q15" value="A"> Provide hand wipes/sanitizer</label>
+          <label><input type="radio" name="q15" value="B"> Workers bring water</label>
+          <label><input type="radio" name="q15" value="C"> Not required</label>
+        </div>
+
+      </div>
+      <button onclick="checkQuiz()" style="margin-top:1rem; background:var(--accent); color:#000; padding:15px; border:none; border-radius:8px; font-weight:bold; cursor:pointer; width:100%;">Submit & Grade Exam</button>
+      <div id="quiz-result" style="margin-top:1.5rem; font-size:1.2rem; text-align:center; font-weight: bold;"></div>
+    </div>
+  </section>
+
+  <section id="pdfs">
+    <div class="card">
+      <h2>Study PDFs</h2>
+      <p>Ensure you have your CITB PDF named <b>CITB_HSE_MAP_Mobile_Study_Hub.pdf</b> in your folder.</p>
+      <iframe src="CITB_HSE_MAP_Mobile_Study_Hub.pdf"></iframe>
+    </div>
+  </section>
+</main>
+</div>
+
+<script>
+// Tab Switching
+function show(id){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b=>b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// Countdown to a future date
+const testDate = new Date('2026-12-31');
+function updateCountdown(){
+  const now=new Date();
+  const diff=testDate-now;
+  if(diff<=0){document.getElementById('countdown').textContent='Test day!';return;}
+  const d=Math.floor(diff/86400000);
+  document.getElementById('countdown').textContent=d+' Days to Exam';
+}
+updateCountdown(); setInterval(updateCountdown,60000);
+
+// Progress Tracker
+let progressVal = localStorage.getItem('progress')||0;
+const progress=document.getElementById('progress');
+const progressText=document.getElementById('progressText');
+progress.value=progressVal; progressText.textContent=progressVal+'% complete';
+
+function markProgress(val){
+  progressVal=Math.min(100,Number(progressVal)+val);
+  localStorage.setItem('progress',progressVal);
+  progress.value=progressVal;
+  progressText.textContent=progressVal+'% complete';
+}
+
+// Quiz Logic
+function checkQuiz() {
+  const container = document.getElementById('quiz-container');
+  const questions = container.querySelectorAll('.qa');
+  let score = 0;
+
+  questions.forEach((q, index) => {
+    const correctAnswer = q.getAttribute('data-answer');
+    const selected = q.querySelector(`input[name="q${index + 1}"]:checked`);
+    
+    if (selected && selected.value === correctAnswer) {
+      score++;
+      q.style.background = "rgba(16, 185, 129, 0.15)";
+      q.style.border = "1px solid #10b981";
+    } else {
+      q.style.background = "rgba(239, 68, 68, 0.15)";
+      q.style.border = "1px solid #ef4444";
+    }
+  });
+
+  const percent = Math.round((score / questions.length) * 100);
+  const resultDiv = document.getElementById('quiz-result');
+  resultDiv.innerHTML = `Result: ${score} / ${questions.length} (${percent}%)`;
+  
+  if (percent >= 80) {
+    markProgress(20);
+    resultDiv.style.color = "#10b981";
+    resultDiv.innerHTML += "<br>🎉 Pass! Progress Updated.";
+  } else {
+    resultDiv.style.color = "#ef4444";
+    resultDiv.innerHTML += "<br>Keep studying! (80% needed to pass)";
+  }
+  window.scrollTo(0, document.body.scrollHeight);
+}
+
+// Service Worker Registration for PWA
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('sw.js').catch(err => console.log("SW failed", err));
+}
+<section id="cheatsheet">
+  <div class="card">
+    <h2>Legal Limits & Numbers</h2>
+    
+    <h3>📢 Noise Levels</h3>
+    <table style="width:100%; border-collapse: collapse; margin-bottom: 1rem;">
+      <tr style="border-bottom: 1px solid var(--muted);">
+        <th style="text-align:left; padding: 8px;">Level</th>
+        <th style="text-align:left; padding: 8px;">Action Required</th>
+      </tr>
+      <tr><td style="padding: 8px;">80 dB</td><td style="padding: 8px;">Employer must assess risk & provide training.</td></tr>
+      <tr><td style="padding: 8px;">85 dB</td><td style="padding: 8px;"><b>Mandatory</b> hearing protection & zones.</td></tr>
+      <tr><td style="padding: 8px;">87 dB</td><td style="padding: 8px;">Absolute limit (including protection).</td></tr>
+    </table>
+
+    <h3>⏱️ RIDDOR Timeframes</h3>
+    <ul>
+      <li><strong>Over 7-day injury:</strong> Must be reported within 15 days of the accident.</li>
+      <li><strong>Death/Specified Injury:</strong> Must be reported by the quickest means without delay.</li>
+      <li><strong>Records:</strong> Must keep an accident book record for any injury resulting in over 3 days' absence.</li>
+    </ul>
+
+    <h3>🏗️ CDM 2015 Notification (F10)</h3>
+    <p>A project must be notified to the HSE if it lasts more than:</p>
+    <ul>
+      <li><strong>30 working days</strong> AND has more than <strong>20 workers</strong> at any one time.</li>
+      <li>OR exceeds <strong>500 person days</strong>.</li>
+    </ul>
+
+    <h3>🫨 Vibration (HAVS)</h3>
+    <ul>
+      <li><strong>Exposure Action Value (EAV):</strong> 2.5 $m/s^2$ (Action must be taken).</li>
+      <li><strong>Exposure Limit Value (ELV):</strong> 5.0 $m/s^2$ (Must NOT be exceeded).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>Fire Extinguisher Guide</h2>
+    <ul>
+      <li><strong>🔴 Red (Water):</strong> Wood, paper, textiles. (NOT electrical).</li>
+      <li><strong>⚫ Black (CO2):</strong> Electrical fires & flammable liquids.</li>
+      <li><strong>🍦 Cream (Foam):</strong> Flammable liquids.</li>
+      <li><strong>🔵 Blue (Dry Powder):</strong> Multi-purpose (but messy).</li>
+    </ul>
+  </div>
+</section>
+
+</script>
+
+</body>
+</html>
